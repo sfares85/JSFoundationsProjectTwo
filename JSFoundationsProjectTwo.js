@@ -27,7 +27,7 @@ function sumOdds(numbers) {
 	let odds = filterOdds(numbers);
 	let sum = 0;
 	odds.forEach(num => {
-		sum += num;
+		if(num%2 != 0) sum += num;
 	})
 	return sum;
 }
