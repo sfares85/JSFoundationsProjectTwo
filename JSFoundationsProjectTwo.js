@@ -7,7 +7,7 @@
  * Returns an array of the even numbers
  */
 function filterEvens(numbers) {
-	return numbers.filter(num => num%2 == 0)
+    // your code goes here!
 }
 
 /**
@@ -16,7 +16,7 @@ function filterEvens(numbers) {
  * Returns an array of the odd numbers
  */
 function filterOdds(numbers) {
-	return numbers.filter(num => num%2 != 0)
+    // your code goes here!
 }
 
 /**
@@ -24,12 +24,7 @@ function filterOdds(numbers) {
  * Returns the sum of the odd numbers in that array
  */
 function sumOdds(numbers) {
-	let odds = filterOdds(numbers);
-	let sum = 0;
-	odds.forEach(num => {
-		sum += num;
-	})
-	return sum;
+    // your code goes here!
 }
 
 /**
@@ -37,7 +32,7 @@ function sumOdds(numbers) {
  * Logs every element of the array
  */
 const logger = function(array) {
-  array.forEach(element => console.log(element));
+    // your code goes here!
 };
 
 /**
@@ -48,7 +43,7 @@ const logger = function(array) {
  *   C = (F - 32) * (5/9)
  */
 const toCelsius = function(temperatures) {
-  return temperatures.map(t => (t - 32) * (5 / 9));
+    // your code goes here!
 };
 
 /**
@@ -56,7 +51,7 @@ const toCelsius = function(temperatures) {
  * Returns an array of temperatures that exceed the threshold
  */
 const hottestDays = function(temperatures, threshold) {
-  return temperatures.filter(t => t > threshold);
+    // your code goes here!
 };
 
 /**
@@ -66,7 +61,7 @@ const hottestDays = function(temperatures, threshold) {
  * hint: you can combine previous functions
  */
 const logHottestDays = function(temperatures, threshold) {
-  logger(toCelsius(hottestDays(temperatures, threshold)));
+    // your code goes here!
 };
 
 /**************************************************
