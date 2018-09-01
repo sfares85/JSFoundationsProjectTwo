@@ -5,6 +5,12 @@
  * Receives an array of numbers
  * Filters out odd numbers
  * Returns an array of the even numbers
+ *
+ * Example usage:
+ *
+ *     filterEvens([1, 2, 3, 4, 5])
+ *     returns [2, 4]
+ *
  */
 function filterEvens(numbers) {
 	return numbers.filter(num => num%2 == 0)
@@ -14,6 +20,12 @@ function filterEvens(numbers) {
  * Receives an array of numbers
  * Filters out even numbers
  * Returns an array of the odd numbers
+ *
+ * Example usage:
+ *
+ *     filterOdds([1, 2, 3, 4, 5])
+ *     returns [1, 3, 5]
+ *
  */
 function filterOdds(numbers) {
 	return numbers.filter(num => num%2 != 0)
@@ -22,6 +34,12 @@ function filterOdds(numbers) {
 /**
  * Receives an array of numbers
  * Returns the sum of the odd numbers in that array
+ *
+ * Example usage:
+ *
+ *     sumOdds([1, 2, 3, 4, 5])
+ *     returns 9
+ *
  */
 function sumOdds(numbers) {
 	let odds = filterOdds(numbers);
@@ -32,82 +50,124 @@ function sumOdds(numbers) {
 	return sum;
 }
 
-/**
- * Receives an array
- * Logs every element of the array
- */
-const logger = function(array) {
-  array.forEach(element => console.log(element));
-};
+let names = ["full house", "huehuehue", "abraaj", "coded", "full house", "joy of painting", "huehuehue", "sublime text", "huehuehue", "joy of painting"]
 
 /**
- * Receives an array of temperatures in degrees Fahrenheit
- * Returns an array of temperatures in degrees Celsius
+ * Receives a number (`maxLength`)
+ * Returns an array of the names whose length is larger than `maxLength`
  *
- * The conversion formula is:
- *   C = (F - 32) * (5/9)
- */
-const toCelsius = function(temperatures) {
-  return temperatures.map(t => (t - 32) * (5 / 9));
-};
-
-/**
- * Receives an array of temperatures and a threshold temperature
- * Returns an array of temperatures that exceed the threshold
- */
-const hottestDays = function(temperatures, threshold) {
-  return temperatures.filter(t => t > threshold);
-};
-
-/**
- * Receives an array of temperatures IN DEGREES FAHRENHEINT and a threshold temperature IN DEGREES FAHRENHEINT
- * Logs temperatures that exceed the threshold to the console IN DEGREES CELSIUS
+ * Example usage:
  *
- * hint: you can combine previous functions
+ *     namesLargerThan(10)
+ *     returns [ 'joy of painting', 'sublime text', 'joy of painting' ]
+ *
  */
-const logHottestDays = function(temperatures, threshold) {
-  logger(toCelsius(hottestDays(temperatures, threshold)));
-};
+const namesLargerThan = function(maxLength) {
+	return names.filter(name => name.length > maxLength);
+}
+
+/**
+ * Receives a number (`maxLength`)
+ * Returns the number of names that are larger than `maxLength`
+ *
+ * Example usage:
+ *
+ *     numberOfNamesLargerThan(10)
+ *     returns 3
+ *
+ */
+const numberOfNamesLargerThan = function(maxLength) {
+	return namesLargerThan(maxLength).length
+}
+
+/**
+ * Receives a name (`newName`) and a length (`len`)
+ * Replaces all names with length equal to `len` with `newName`.
+ * Returns the new array.
+ *
+ * Example usage:
+ *
+ *     replaceNames()
+ *     returns [ 'full house',
+ *               'huehuehue',
+ *               'abraaj',
+ *               'coded',
+ *               'full house',
+ *               'joy of painting',
+ *               'huehuehue',
+ *               'rebound',
+ *               'huehuehue',
+ *               'joy of painting' ]
+ *
+ */
+const replaceNames = function(newName, len) {
+	return names.map(name => {
+		if (name.length === len) {
+			return newName;
+		} else {
+			return name;
+		}
+	})
+}
+
+/**
+ * Receives a name
+ * Returns the number of times that name is repeated in the `names` array.
+ *
+ * Example usage:
+ *
+ *     count("joy of painting")
+ *     returns 2
+ *
+ */
+const count = function(repeatedName) {
+	let count = 0;
+	names.forEach(name => {
+		if (name === repeatedName) {
+			count++;
+		}
+	})
+	return count;
+}
+
 
 /**************************************************
 The following code runs the functions defined above
 ***************************************************/
 let numbers = [153,67,9,34,7,67,342,7,34,8656,2,124,5,43];
-let instructors = ["Hamza", "Mshary", "Aziz", "Hussein", "Fawaz"];
-let temperatures = [32,212,-40,122,54.5];
-let temperaturesForThreshold = [0,-5,35,20,45,50,10];
-let threshold = 40;
-hottestDays([1,2,3,4,5],0);
 
 // filterEvens
-evens = filterEvens(numbers);
+let evens = filterEvens(numbers);
 console.log("EVENS:");
 console.log(evens);
 
 // sumOdds
-sum = sumOdds(numbers);
+let sum = sumOdds(numbers);
 console.log("\n--------------------------")
 console.log("SUM ODDS:");
 console.log(sum);
 
-// logger
+// namesLargerThan
+let largeNames = namesLargerThan(10);
 console.log("\n--------------------------")
-console.log("LOGGER:");
-logger(instructors);
+console.log("NAMES LARGER THAN:");
+console.log(largeNames);
 
-// toCelsius
-let tempsInCelsius = toCelsius(temperatures);
+// numberOfNamesLargerThan
+let numOfLargeNames = numberOfNamesLargerThan(10);
 console.log("\n--------------------------")
-console.log("TO CELSIUS:");
-console.log(tempsInCelsius);
+console.log("NUMBER OF NAMES LARGER THAN:");
+console.log(numOfLargeNames);
 
-// hottestDays
-let veryHotDays = hottestDays(temperaturesForThreshold, threshold);
+// replaceNames
+let newNames = replaceNames("rebound", 12);
 console.log("\n--------------------------")
-console.log("HOTTEST DAYS:");
-console.log(veryHotDays);
+console.log("REPLACE NAMES:");
+console.log(newNames);
 
-// logHottestDays
+// count
+let occurances = count("joy of painting");
 console.log("\n--------------------------")
-console.log("LOG HOTTEST DAYS:");
-logHottestDays(temperaturesForThreshold, threshold);
+console.log("COUNT:");
+console.log(occurances);
+
