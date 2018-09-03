@@ -112,7 +112,7 @@ const replaceStateNames = function(newName, len) {
  *     returns 4
  *
  */
-const count = function(repeatedString) {
+const count = function(subString) {
 	// your code goes here!
 }
 
