@@ -1,108 +1,161 @@
 // BONUS: Do sumOdds() without using the filterOdds() function and without using a .filter() method.
-// BONUS: Do the functions logger() toCelsius() hottestDays() logHottestDays() each in a single line.
+// BONUS: Do the functions stateNamesLongerThan() and numberOfStateNamesLongerThan() each in a single line.
+// BONUS: use .reduce() for the sumOdds() and count() functions
 
 /**
  * Receives an array of numbers
  * Filters out odd numbers
  * Returns an array of the even numbers
+ *
+ * Example usage:
+ *
+ *     filterEvens([1, 2, 3, 4, 5])
+ *     returns [2, 4]
+ *
  */
 function filterEvens(numbers) {
-    // your code goes here!
+	// your code goes here!
 }
 
 /**
  * Receives an array of numbers
  * Filters out even numbers
  * Returns an array of the odd numbers
+ *
+ * Example usage:
+ *
+ *     filterOdds([1, 2, 3, 4, 5])
+ *     returns [1, 3, 5]
+ *
  */
 function filterOdds(numbers) {
-    // your code goes here!
+	// your code goes here!
 }
 
 /**
  * Receives an array of numbers
  * Returns the sum of the odd numbers in that array
+ *
+ * Example usage:
+ *
+ *     sumOdds([1, 2, 3, 4, 5])
+ *     returns 9
+ *
  */
 function sumOdds(numbers) {
-    // your code goes here!
+	// your code goes here!
+}
+
+
+let states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
+
+
+/**
+ * Receives a number (`minLength`)
+ * Returns an array of the states with names longer than `minLength`
+ *
+ * Example usage:
+ *
+ *     stateNamesLongerThan()
+ *     returns [ 'joy of painting', 'sublime text', 'joy of painting' ]
+ *
+ */
+const stateNamesLongerThan = function(minLength) {
+	// your code goes here!
 }
 
 /**
- * Receives an array
- * Logs every element of the array
- */
-const logger = function(array) {
-    // your code goes here!
-};
-
-/**
- * Receives an array of temperatures in degrees Fahrenheit
- * Returns an array of temperatures in degrees Celsius
+ * Receives a number (`minLength`)
+ * Returns the number of states that are larger than `minLength`
  *
- * The conversion formula is:
- *   C = (F - 32) * (5/9)
- */
-const toCelsius = function(temperatures) {
-    // your code goes here!
-};
-
-/**
- * Receives an array of temperatures and a threshold temperature
- * Returns an array of temperatures that exceed the threshold
- */
-const hottestDays = function(temperatures, threshold) {
-    // your code goes here!
-};
-
-/**
- * Receives an array of temperatures IN DEGREES FAHRENHEINT and a threshold temperature IN DEGREES FAHRENHEINT
- * Logs temperatures that exceed the threshold to the console IN DEGREES CELSIUS
+ * Example usage:
  *
- * hint: you can combine previous functions
+ *     numberOfNamesLargerThan()
+ *     returns 
+ *
  */
-const logHottestDays = function(temperatures, threshold) {
-    // your code goes here!
-};
+const numberOfStateNamesLongerThan = function(minLength) {
+	// your code goes here!
+}
+
+/**
+ * Receives a state (`newName`) and a length (`len`)
+ * Replaces all states with length equal to `len` with `newName`.
+ * Returns the new array.
+ *
+ * Example usage:
+ *
+ *     replaceStateNames()
+ *     returns [ 'full house',
+ *               'huehuehue',
+ *               'abraaj',
+ *               'coded',
+ *               'full house',
+ *               'joy of painting',
+ *               'huehuehue',
+ *               'rebound',		<----
+ *               'huehuehue',
+ *               'joy of painting' ]
+ *
+ */
+const replaceStateNames = function(newName, len) {
+	// your code goes here!
+}
+
+/**
+ * Receives a string
+ * Returns the number of states with names that contain that string
+ *
+ * Example usage:
+ *
+ *     count("New")
+ *     returns 4
+ *
+ */
+const count = function(repeatedString) {
+	// your code goes here!
+}
+
 
 /**************************************************
 The following code runs the functions defined above
 ***************************************************/
 let numbers = [153,67,9,34,7,67,342,7,34,8656,2,124,5,43];
-let instructors = ["Hamza", "Mshary", "Aziz", "Hussein", "Fawaz"];
-let temperatures = [32,212,-40,122,54.5];
-let temperaturesForThreshold = [0,-5,35,20,45,50,10];
-let threshold = 40;
-hottestDays([1,2,3,4,5],0);
 
-// filterEvens
-evens = filterEvens(numbers);
-console.log("EVENS:");
-console.log(evens);
+// uncomment the following lines to run and test your code.
+// // filterEvens
+// let evens = filterEvens(numbers);
+// console.log("EVENS:");
+// console.log(evens);
 
-// sumOdds
-sum = sumOdds(numbers);
-console.log("\n--------------------------")
-console.log("SUM ODDS:");
-console.log(sum);
+// // sumOdds
+// let sum = sumOdds(numbers);
+// console.log("\n--------------------------")
+// console.log("SUM ODDS:");
+// console.log(sum);
 
-// logger
-console.log("\n--------------------------")
-console.log("LOGGER:");
-logger(instructors);
+// // stateNamesLongerThan
+// let largeNames = stateNamesLongerThan(10);
+// console.log("\n--------------------------")
+// console.log("NAMES LARGER THAN:");
+// console.log(largeNames);
 
-// toCelsius
-let tempsInCelsius = toCelsius(temperatures);
-console.log("\n--------------------------")
-console.log("TO CELSIUS:");
-console.log(tempsInCelsius);
+// // numberOfStateNamesLongerThan
+// let numOfLargeStateNames = numberOfStateNamesLongerThan(10);
+// console.log("\n--------------------------")
+// console.log("NUMBER OF STATE NAMES LARGER THAN:");
+// console.log(numOfLargeStateNames);
 
-// hottestDays
-let veryHotDays = hottestDays(temperaturesForThreshold, threshold);
-console.log("\n--------------------------")
-console.log("HOTTEST DAYS:");
-console.log(veryHotDays);
+// // replaceStateNames
+// let newNames = replaceStateNames("REBOUND", 12);
+// console.log("\n--------------------------")
+// console.log("REPLACE STATE NAMES:");
+// console.log(newNames);
 
-// logHottestDays
-console.log("\n--------------------------")
-console.log("LOG HOTTEST DAYS:");
-logHottestDays(temperaturesForThreshold, threshold);
+// // count
+// let occurances = count("New");
+// console.log("\n--------------------------")
+// console.log("COUNT:");
+// console.log(occurances);
+
+// How can you know the number of states with names that contain multiple words?
