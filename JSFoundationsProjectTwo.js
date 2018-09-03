@@ -1,5 +1,6 @@
 // BONUS: Do sumOdds() without using the filterOdds() function and without using a .filter() method.
-// BONUS: Do the functions logger() toCelsius() hottestDays() logHottestDays() each in a single line.
+// BONUS: Do the functions stateNamesLongerThan() and numberOfStateNamesLongerThan() each in a single line.
+// BONUS: use .reduce() for the sumOdds() and count() functions
 
 /**
  * Receives an array of numbers
@@ -50,44 +51,46 @@ function sumOdds(numbers) {
 	return sum;
 }
 
-let names = ["full house", "huehuehue", "abraaj", "coded", "full house", "joy of painting", "huehuehue", "sublime text", "huehuehue", "joy of painting"]
+
+let states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
+
 
 /**
- * Receives a number (`maxLength`)
- * Returns an array of the names whose length is larger than `maxLength`
+ * Receives a number (`minLength`)
+ * Returns an array of the states with names longer than `minLength`
  *
  * Example usage:
  *
- *     namesLargerThan(10)
+ *     stateNamesLongerThan()
  *     returns [ 'joy of painting', 'sublime text', 'joy of painting' ]
  *
  */
-const namesLargerThan = function(maxLength) {
-	return names.filter(name => name.length > maxLength);
+const stateNamesLongerThan = function(minLength) {
+	return states.filter(state => state.length > minLength);
 }
 
 /**
- * Receives a number (`maxLength`)
- * Returns the number of names that are larger than `maxLength`
+ * Receives a number (`minLength`)
+ * Returns the number of states that are larger than `minLength`
  *
  * Example usage:
  *
- *     numberOfNamesLargerThan(10)
- *     returns 3
+ *     numberOfNamesLargerThan()
+ *     returns 
  *
  */
-const numberOfNamesLargerThan = function(maxLength) {
-	return namesLargerThan(maxLength).length
+const numberOfStateNamesLongerThan = function(minLength) {
+	return stateNamesLongerThan(minLength).length
 }
 
 /**
- * Receives a name (`newName`) and a length (`len`)
- * Replaces all names with length equal to `len` with `newName`.
+ * Receives a state (`newName`) and a length (`len`)
+ * Replaces all states with length equal to `len` with `newName`.
  * Returns the new array.
  *
  * Example usage:
  *
- *     replaceNames()
+ *     replaceStateNames()
  *     returns [ 'full house',
  *               'huehuehue',
  *               'abraaj',
@@ -95,35 +98,35 @@ const numberOfNamesLargerThan = function(maxLength) {
  *               'full house',
  *               'joy of painting',
  *               'huehuehue',
- *               'rebound',
+ *               'rebound',		<----
  *               'huehuehue',
  *               'joy of painting' ]
  *
  */
-const replaceNames = function(newName, len) {
-	return names.map(name => {
-		if (name.length === len) {
+const replaceStateNames = function(newName, len) {
+	return states.map(state => {
+		if (state.length === len) {
 			return newName;
 		} else {
-			return name;
+			return state;
 		}
 	})
 }
 
 /**
- * Receives a name
- * Returns the number of times that name is repeated in the `names` array.
+ * Receives a string
+ * Returns the number of states with names that contain that string
  *
  * Example usage:
  *
- *     count("joy of painting")
- *     returns 2
+ *     count("New")
+ *     returns 4
  *
  */
-const count = function(repeatedName) {
+const count = function(repeatedString) {
 	let count = 0;
-	names.forEach(name => {
-		if (name === repeatedName) {
+	states.forEach(state => {
+		if (state.includes(repeatedString)) {
 			count++;
 		}
 	})
@@ -147,27 +150,28 @@ console.log("\n--------------------------")
 console.log("SUM ODDS:");
 console.log(sum);
 
-// namesLargerThan
-let largeNames = namesLargerThan(10);
+// stateNamesLongerThan
+let largeNames = stateNamesLongerThan(10);
 console.log("\n--------------------------")
 console.log("NAMES LARGER THAN:");
 console.log(largeNames);
 
-// numberOfNamesLargerThan
-let numOfLargeNames = numberOfNamesLargerThan(10);
+// numberOfStateNamesLongerThan
+let numOfLargeStateNames = numberOfStateNamesLongerThan(10);
 console.log("\n--------------------------")
-console.log("NUMBER OF NAMES LARGER THAN:");
-console.log(numOfLargeNames);
+console.log("NUMBER OF STATE NAMES LARGER THAN:");
+console.log(numOfLargeStateNames);
 
-// replaceNames
-let newNames = replaceNames("rebound", 12);
+// replaceStateNames
+let newNames = replaceStateNames("REBOUND", 12);
 console.log("\n--------------------------")
-console.log("REPLACE NAMES:");
+console.log("REPLACE STATE NAMES:");
 console.log(newNames);
 
 // count
-let occurances = count("joy of painting");
+let occurances = count("New");
 console.log("\n--------------------------")
 console.log("COUNT:");
 console.log(occurances);
 
+// How can you know the number of states with names that contain multiple words?
