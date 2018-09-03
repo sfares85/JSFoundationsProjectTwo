@@ -123,10 +123,10 @@ const replaceStateNames = function(newName, len) {
  *     returns 4
  *
  */
-const count = function(repeatedString) {
+const count = function(subString) {
 	let count = 0;
 	states.forEach(state => {
-		if (state.includes(repeatedString)) {
+		if (state.includes(subString)) {
 			count++;
 		}
 	})
