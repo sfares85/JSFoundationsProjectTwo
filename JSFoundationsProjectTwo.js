@@ -60,7 +60,7 @@ let states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','Californ
  *     returns [ 'joy of painting', 'sublime text', 'joy of painting' ]
  *
  */
-const stateNamesLongerThan = function(minLength) {
+function stateNamesLongerThan(minLength) {
 	// your code goes here!
 }
 
@@ -74,7 +74,7 @@ const stateNamesLongerThan = function(minLength) {
  *     returns 
  *
  */
-const numberOfStateNamesLongerThan = function(minLength) {
+function numberOfStateNamesLongerThan(minLength) {
 	// your code goes here!
 }
 
@@ -98,7 +98,7 @@ const numberOfStateNamesLongerThan = function(minLength) {
  *               'joy of painting' ]
  *
  */
-const replaceStateNames = function(newName, len) {
+function replaceStateNames(newName, len) {
 	// your code goes here!
 }
 
@@ -108,11 +108,11 @@ const replaceStateNames = function(newName, len) {
  *
  * Example usage:
  *
- *     count("New")
+ *     numberOfStateNamesContaining("New")
  *     returns 4
  *
  */
-const count = function(subString) {
+function numberOfStateNamesContaining(subString) {
 	// your code goes here!
 }
 
