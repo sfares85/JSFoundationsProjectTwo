@@ -1,6 +1,6 @@
 // BONUS: Do sumOdds() without using the filterOdds() function and without using a .filter() method.
 // BONUS: Do the functions stateNamesLongerThan() and numberOfStateNamesLongerThan() each in a single line.
-// BONUS: use .reduce() for the sumOdds() and count() functions
+// BONUS: use .reduce() for the sumOdds() and numberOfStateNamesContaining() functions
 
 /**
  * Receives an array of numbers
@@ -47,6 +47,7 @@ function sumOdds(numbers) {
 }
 
 
+
 let states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
 
 
@@ -56,8 +57,11 @@ let states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','Californ
  *
  * Example usage:
  *
- *     stateNamesLongerThan()
- *     returns [ 'joy of painting', 'sublime text', 'joy of painting' ]
+ *     stateNamesLongerThan(15)
+ *     returns [ 'District of Columbia',
+ * 				 'Federated States of Micronesia',
+ * 				 'Marshall Islands',
+ * 				 'Northern Mariana Islands' ]
  *
  */
 function stateNamesLongerThan(minLength) {
@@ -66,12 +70,12 @@ function stateNamesLongerThan(minLength) {
 
 /**
  * Receives a number (`minLength`)
- * Returns the number of states that are larger than `minLength`
+ * Returns the number of states that are longer than `minLength`
  *
  * Example usage:
  *
- *     numberOfNamesLargerThan()
- *     returns 
+ *     numberOfNamesLongerThan(10)
+ *     returns 18
  *
  */
 function numberOfStateNamesLongerThan(minLength) {
@@ -79,23 +83,28 @@ function numberOfStateNamesLongerThan(minLength) {
 }
 
 /**
- * Receives a state (`newName`) and a length (`len`)
+ * Receives a name (`newName`) and a length (`len`)
  * Replaces all states with length equal to `len` with `newName`.
  * Returns the new array.
  *
  * Example usage:
  *
- *     replaceStateNames()
- *     returns [ 'full house',
- *               'huehuehue',
- *               'abraaj',
- *               'coded',
- *               'full house',
- *               'joy of painting',
- *               'huehuehue',
- *               'rebound',		<----
- *               'huehuehue',
- *               'joy of painting' ]
+ *     replaceStateNames("REBOUND", 12)
+ *     returns [ 'Alabama',
+ * 				  ...,
+ * 				  'North Carolina',
+ * 		   =--->  'REBOUND',
+ * 				  'Northern Mariana Islands',
+ * 				  ...,
+ * 				  'Palau',
+ * 		   =--->  'REBOUND',
+ * 				  'Puerto Rico',
+ * 		   =--->  'REBOUND',
+ * 				  'South Carolina',
+ * 		   =--->  'REBOUND',
+ * 				  'Tennessee',
+ * 				  ...,
+ *				  'Wyoming' ]
  *
  */
 function replaceStateNames(newName, len) {
@@ -108,7 +117,7 @@ function replaceStateNames(newName, len) {
  *
  * Example usage:
  *
- *     numberOfStateNamesContaining("New")
+ *     numberOfStateNamesLongerThan("New")
  *     returns 4
  *
  */
@@ -122,7 +131,6 @@ The following code runs the functions defined above
 ***************************************************/
 let numbers = [153,67,9,34,7,67,342,7,34,8656,2,124,5,43];
 
-// uncomment the following lines to run and test your code.
 // // filterEvens
 // let evens = filterEvens(numbers);
 // console.log("EVENS:");
@@ -135,15 +143,15 @@ let numbers = [153,67,9,34,7,67,342,7,34,8656,2,124,5,43];
 // console.log(sum);
 
 // // stateNamesLongerThan
-// let largeNames = stateNamesLongerThan(10);
+// let largeNames = stateNamesLongerThan(15);
 // console.log("\n--------------------------")
-// console.log("NAMES LARGER THAN:");
+// console.log("STATE NAMES LONGER THAN:");
 // console.log(largeNames);
 
 // // numberOfStateNamesLongerThan
 // let numOfLargeStateNames = numberOfStateNamesLongerThan(10);
 // console.log("\n--------------------------")
-// console.log("NUMBER OF STATE NAMES LARGER THAN:");
+// console.log("NUMBER OF STATE NAMES LONGER THAN:");
 // console.log(numOfLargeStateNames);
 
 // // replaceStateNames
@@ -152,10 +160,10 @@ let numbers = [153,67,9,34,7,67,342,7,34,8656,2,124,5,43];
 // console.log("REPLACE STATE NAMES:");
 // console.log(newNames);
 
-// // count
-// let occurances = count("New");
+// // numberOfStateNamesContaining
+// let occurances = numberOfStateNamesContaining("New");
 // console.log("\n--------------------------")
-// console.log("COUNT:");
+// console.log("NUMBER OF STATE NAMES CONTAININGa:");
 // console.log(occurances);
 
 // How can you know the number of states with names that contain multiple words?
